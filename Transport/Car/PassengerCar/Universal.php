@@ -9,6 +9,8 @@
 
 namespace Transport\Car\PassengerCar;
 
-class Universal
+use Transport\Car\PassengerCar;
+
+class Universal extends PassengerCar
 {
 }

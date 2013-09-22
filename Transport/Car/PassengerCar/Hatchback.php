@@ -9,6 +9,8 @@
 
 namespace Transport\Car\PassengerCar;
 
-class Hatchback
+use Transport\Car\PassengerCar;
+
+class Hatchback extends PassengerCar
 {
 }

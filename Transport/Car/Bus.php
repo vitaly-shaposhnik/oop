@@ -2,6 +2,8 @@
 
 namespace Transport\Car;
 
-class Bus
+use Transport\Car;
+
+class Bus extends Car
 {
 }

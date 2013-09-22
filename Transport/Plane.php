@@ -6,11 +6,13 @@ class Plane extends TransportAbstract
 {
     public $flightCount;
 
-    public function drive(){
+    public function drive()
+    {
         print 'Flying ...';
     }
 
-    public function transport(){
+    public function transport()
+    {
         print 'Transporting ...';
     }
 
@@ -29,6 +31,5 @@ class Plane extends TransportAbstract
     {
         return $this->flightCount;
     }
-
 
 }

@@ -6,11 +6,13 @@ class Train extends TransportAbstract
 {
     public $wagonCount;
 
-    public function drive(){
+    public function drive()
+    {
         print 'Driving ...';
     }
 
-    public function transport(){
+    public function transport()
+    {
         print 'Transporting ...';
     }
 
@@ -29,6 +31,5 @@ class Train extends TransportAbstract
     {
         return $this->wagonCount;
     }
-
 
 }
