@@ -4,28 +4,27 @@ namespace Transport;
 
 class Car extends TransportAbstract
 {
-    public $wheelCount;
-    public $oil;
-    public $gears;
-    public $engine;
-    public $doorsCount;
-    public $brand;
-    public $model;
-    public $year;
+    protected $wheelCount;
+    protected $oil;
+    protected $gears;
+    protected $engine;
+    protected $doorsCount;
+    protected $brand;
+    protected $model;
+    protected $year;
 
-    public function __construct()
+    function __construct($color, $maxSpeed, $price, $seatCount, $weight, $brand, $doorsCount, $engine, $gears, $model, $oil, $wheelCount, $year)
     {
-        $this->doorsCount = 4;
-        $this->engine = 1.9;
-        $this->gears = 5;
-        $this->oil = 'diesel';
-        $this->wheelCount = 4;
+        parent::__construct($color, $maxSpeed, $price, $seatCount, $weight);
+        $this->brand = $brand;
+        $this->doorsCount = $doorsCount;
+        $this->engine = $engine;
+        $this->gears = $gears;
+        $this->model = $model;
+        $this->oil = $oil;
+        $this->wheelCount = $wheelCount;
+        $this->year = $year;
     }
-
-    /*public function __construct()
-    {
-        $this->wheelCount = 4;
-    }*/
 
     public function drive()
     {
@@ -48,11 +47,11 @@ class Car extends TransportAbstract
     }
 
     /**
-     * @param mixed $doorsCount
+     * @return mixed
      */
-    public function setDoorsCount($doorsCount)
+    public function getBrand()
     {
-        $this->doorsCount = $doorsCount;
+        return $this->brand;
     }
 
     /**
@@ -64,27 +63,11 @@ class Car extends TransportAbstract
     }
 
     /**
-     * @param mixed $engine
-     */
-    public function setEngine($engine)
-    {
-        $this->engine = $engine;
-    }
-
-    /**
      * @return mixed
      */
     public function getEngine()
     {
         return $this->engine;
-    }
-
-    /**
-     * @param mixed $gears
-     */
-    public function setGears($gears)
-    {
-        $this->gears = $gears;
     }
 
     /**
@@ -96,11 +79,11 @@ class Car extends TransportAbstract
     }
 
     /**
-     * @param mixed $oil
+     * @return mixed
      */
-    public function setOil($oil)
+    public function getModel()
     {
-        $this->oil = $oil;
+        return $this->model;
     }
 
     /**
@@ -112,59 +95,11 @@ class Car extends TransportAbstract
     }
 
     /**
-     * @param int $wheelCount
-     */
-    public function setWheelCount($wheelCount)
-    {
-        $this->wheelCount = $wheelCount;
-    }
-
-    /**
-     * @return int
+     * @return mixed
      */
     public function getWheelCount()
     {
         return $this->wheelCount;
-    }
-
-    /**
-     * @param mixed $brand
-     */
-    public function setBrand($brand)
-    {
-        $this->brand = $brand;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getBrand()
-    {
-        return $this->brand;
-    }
-
-    /**
-     * @param mixed $model
-     */
-    public function setModel($model)
-    {
-        $this->model = $model;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getModel()
-    {
-        return $this->model;
-    }
-
-    /**
-     * @param mixed $year
-     */
-    public function setYear($year)
-    {
-        $this->year = $year;
     }
 
     /**
@@ -174,5 +109,6 @@ class Car extends TransportAbstract
     {
         return $this->year;
     }
+
 
 }
