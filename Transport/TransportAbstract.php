@@ -37,7 +37,7 @@ abstract class TransportAbstract
      */
     public function getMaxSpeed()
     {
-        return $this->maxSpeed;
+        return $this->maxSpeed . 'km/h';
     }
 
     /**
@@ -45,7 +45,7 @@ abstract class TransportAbstract
      */
     public function getPrice()
     {
-        return $this->price;
+        return $this->price . 'UAH';
     }
 
     /**
@@ -61,6 +61,6 @@ abstract class TransportAbstract
      */
     public function getWeight()
     {
-        return $this->weight;
+        return $this->weight . 'kg';
     }
 }

@@ -13,7 +13,8 @@ class Car extends TransportAbstract
     protected $model;
     protected $year;
 
-    function __construct($color, $maxSpeed, $price, $seatCount, $weight, $brand, $doorsCount, $engine, $gears, $model, $oil, $wheelCount, $year)
+    function __construct($color, $maxSpeed, $price, $seatCount, $weight, $brand,
+                         $doorsCount, $engine, $gears, $model, $oil, $wheelCount, $year)
     {
         parent::__construct($color, $maxSpeed, $price, $seatCount, $weight);
         $this->brand = $brand;
@@ -75,7 +76,7 @@ class Car extends TransportAbstract
      */
     public function getGears()
     {
-        return $this->gears;
+        return $this->gears . ' gears';
     }
 
     /**
@@ -107,8 +108,14 @@ class Car extends TransportAbstract
      */
     public function getYear()
     {
-        return $this->year;
+        return $this->year . 'year';
     }
 
-
+    public function getTeaser()
+    {
+        return $this->getBrand() . ' ' .
+            $this->getModel() . ' ' .
+            $this->getEngine() . ', ' .
+            $this->getYear();
+    }
 }
