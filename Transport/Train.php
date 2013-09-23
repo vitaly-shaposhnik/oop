@@ -4,7 +4,13 @@ namespace Transport;
 
 class Train extends TransportAbstract
 {
-    public $wagonCount;
+    protected $wagonCount;
+
+    function __construct($color, $maxSpeed, $price, $seatCount, $weight, $wagonCount)
+    {
+        parent::__construct($color, $maxSpeed, $price, $seatCount, $weight);
+        $this->wagonCount = $wagonCount;
+    }
 
     public function drive()
     {
@@ -14,14 +20,6 @@ class Train extends TransportAbstract
     public function transport()
     {
         print 'Transporting ...';
-    }
-
-    /**
-     * @param mixed $wagonCount
-     */
-    public function setWagonCount($wagonCount)
-    {
-        $this->wagonCount = $wagonCount;
     }
 
     /**
