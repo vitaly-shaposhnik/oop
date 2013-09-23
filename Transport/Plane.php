@@ -4,7 +4,13 @@ namespace Transport;
 
 class Plane extends TransportAbstract
 {
-    public $flightCount;
+    protected $flightCount;
+
+    function __construct($color, $maxSpeed, $price, $seatCount, $weight, $flightCount)
+    {
+        parent::__construct($color, $maxSpeed, $price, $seatCount, $weight);
+        $this->wagonCount = $flightCount;
+    }
 
     public function drive()
     {
@@ -14,14 +20,6 @@ class Plane extends TransportAbstract
     public function transport()
     {
         print 'Transporting ...';
-    }
-
-    /**
-     * @param mixed $flightCount
-     */
-    public function setFlightCount($flightCount)
-    {
-        $this->flightCount = $flightCount;
     }
 
     /**

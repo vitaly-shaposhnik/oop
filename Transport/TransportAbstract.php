@@ -4,22 +4,25 @@ namespace Transport;
 
 abstract class TransportAbstract
 {
-    public $color;
-    public $price;
-    public $weight;
-    public $maxSpeed;
-    public $seatCount;
+    protected $color;
+    protected $price;
+    protected $weight;
+    protected $maxSpeed;
+    protected $seatCount;
 
-    abstract public function drive();
-    abstract public function transport();
-
-    /**
-     * @param mixed $color
-     */
-    public function setColor($color)
+    function __construct($color, $maxSpeed, $price, $seatCount, $weight)
     {
         $this->color = $color;
+        $this->maxSpeed = $maxSpeed;
+        $this->price = $price;
+        $this->seatCount = $seatCount;
+        $this->weight = $weight;
     }
+
+
+    abstract public function drive();
+
+    abstract public function transport();
 
     /**
      * @return mixed
@@ -30,27 +33,11 @@ abstract class TransportAbstract
     }
 
     /**
-     * @param mixed $maxSpeed
-     */
-    public function setMaxSpeed($maxSpeed)
-    {
-        $this->maxSpeed = $maxSpeed;
-    }
-
-    /**
      * @return mixed
      */
     public function getMaxSpeed()
     {
-        return $this->maxSpeed;
-    }
-
-    /**
-     * @param mixed $price
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
+        return $this->maxSpeed . 'km/h';
     }
 
     /**
@@ -58,15 +45,7 @@ abstract class TransportAbstract
      */
     public function getPrice()
     {
-        return $this->price;
-    }
-
-    /**
-     * @param mixed $seatCount
-     */
-    public function setSeatCount($seatCount)
-    {
-        $this->seatCount = $seatCount;
+        return $this->price . 'UAH';
     }
 
     /**
@@ -78,18 +57,10 @@ abstract class TransportAbstract
     }
 
     /**
-     * @param mixed $weight
-     */
-    public function setWeight($weight)
-    {
-        $this->weight = $weight;
-    }
-
-    /**
      * @return mixed
      */
     public function getWeight()
     {
-        return $this->weight;
+        return $this->weight . 'kg';
     }
 }
