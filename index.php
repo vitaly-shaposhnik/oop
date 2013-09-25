@@ -1,15 +1,15 @@
 <?php
-require_once 'Transport/TransportAbstract.php';
-require_once 'Transport/Plane.php';
-require_once 'Transport/Train.php';
-require_once 'Transport/Car.php';
-require_once 'Transport/HyundaiElantra.php';
-require_once 'Transport/Car/Bus.php';
-require_once 'Transport/Car/Truck.php';
-require_once 'Transport/Car/PassengerCar.php';
-require_once 'Transport/Car/PassengerCar/Hatchback.php';
-require_once 'Transport/Car/PassengerCar/Sedan.php';
-require_once 'Transport/Car/PassengerCar/Universal.php';
+require_once __DIR__.'/Transport/TransportAbstract.php';
+require_once __DIR__.'/Transport/Plane.php';
+require_once __DIR__.'/Transport/Train.php';
+require_once __DIR__.'/Transport/Car.php';
+require_once __DIR__.'/Transport/HyundaiElantra.php';
+require_once __DIR__.'/Transport/Car/Bus.php';
+require_once __DIR__.'/Transport/Car/Truck.php';
+require_once __DIR__.'/Transport/Car/PassengerCar.php';
+require_once __DIR__.'/Transport/Car/PassengerCar/Hatchback.php';
+require_once __DIR__.'/Transport/Car/PassengerCar/Sedan.php';
+require_once __DIR__.'/Transport/Car/PassengerCar/Universal.php';
 
 use Transport\Car;
 //use Transport\Car;
