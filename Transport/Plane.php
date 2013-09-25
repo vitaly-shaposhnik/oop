@@ -6,10 +6,13 @@ class Plane extends TransportAbstract
 {
     protected $flightCount;
 
-    function __construct($color, $maxSpeed, $price, $seatCount, $weight, $flightCount)
+    public function __construct(array $params)
     {
-        parent::__construct($color, $maxSpeed, $price, $seatCount, $weight);
-        $this->wagonCount = $flightCount;
+        foreach ($params as $field => $value) {
+            if (property_exists($this, $field)) {
+                $this->$field = $value;
+            }
+        }
     }
 
     public function drive()

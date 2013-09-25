@@ -6,10 +6,13 @@ class Train extends TransportAbstract
 {
     protected $wagonCount;
 
-    function __construct($color, $maxSpeed, $price, $seatCount, $weight, $wagonCount)
+    public function __construct(array $params)
     {
-        parent::__construct($color, $maxSpeed, $price, $seatCount, $weight);
-        $this->wagonCount = $wagonCount;
+        foreach ($params as $field => $value) {
+            if (property_exists($this, $field)) {
+                $this->$field = $value;
+            }
+        }
     }
 
     public function drive()

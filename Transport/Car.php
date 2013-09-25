@@ -13,19 +13,27 @@ class Car extends TransportAbstract
     protected $model;
     protected $year;
 
-    function __construct($color, $maxSpeed, $price, $seatCount, $weight, $brand,
-                         $doorsCount, $engine, $gears, $model, $oil, $wheelCount, $year)
+    public function __construct(array $params)
     {
-        parent::__construct($color, $maxSpeed, $price, $seatCount, $weight);
-        $this->brand = $brand;
-        $this->doorsCount = $doorsCount;
-        $this->engine = $engine;
-        $this->gears = $gears;
-        $this->model = $model;
-        $this->oil = $oil;
-        $this->wheelCount = $wheelCount;
-        $this->year = $year;
+        foreach ($params as $field => $value) {
+            if (property_exists($this, $field)) {
+                $this->$field = $value;
+            }
+        }
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getTeaser() . '<br>';
+    }
+
+    /*public function __destruct()
+    {
+        print 'Object was destroyed!';
+    }*/
 
     public function drive()
     {
@@ -37,14 +45,9 @@ class Car extends TransportAbstract
         print 'Transporting ...';
     }
 
-    /*public function __destruct()
-    {
-        print 'Object was destroyed!';
-    }*/
-
     public function __unset($name)
     {
-        echo "Свойство '$name' не доступно!".PHP_EOL;
+        echo "Свойство '$name' не доступно!" . PHP_EOL;
     }
 
     /**
@@ -108,7 +111,7 @@ class Car extends TransportAbstract
      */
     public function getYear()
     {
-        return $this->year . 'year';
+        return $this->year . ' year';
     }
 
     public function getTeaser()

@@ -6,5 +6,8 @@ use Transport\Car;
 
 class PassengerCar extends Car
 {
-    public $driveType = 'front';
+    public function __construct()
+    {
+        $this->driveType = 'front';
+    }
 }

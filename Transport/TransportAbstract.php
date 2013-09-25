@@ -10,15 +10,14 @@ abstract class TransportAbstract
     protected $maxSpeed;
     protected $seatCount;
 
-    function __construct($color, $maxSpeed, $price, $seatCount, $weight)
+    public function __construct(array $params)
     {
-        $this->color = $color;
-        $this->maxSpeed = $maxSpeed;
-        $this->price = $price;
-        $this->seatCount = $seatCount;
-        $this->weight = $weight;
+        foreach ($params as $field => $value) {
+            if (property_exists($this, $field)) {
+                $this->$field = $value;
+            }
+        }
     }
-
 
     abstract public function drive();
 
